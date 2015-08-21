@@ -1,0 +1,28 @@
+Uglify.js
+This version is heavily modded, majorly minified and highly compressed with bzip2 to client side self extracting/executing JavaScript in just 18KB! Other versions are 100KB to 250KB (add on another 300KB for couple of versions of JQuery if you swing that way). This version is also much easier to use, just a function to call when ever you want dynamically.
+
+UglifyJS is a JavaScript compressor/minifier written in JavaScript. It also contains tools that allow one to automate working with JavaScript code:
+
+A parser which produces an abstract syntax tree (AST) from JavaScript code.
+A code generator which outputs JavaScript code from an AST, also providing the option to get a source map.
+A compressor (optimizer) — it uses the transformer API to optimize an AST into a smaller one.
+A mangler — reduce names of local variables to (usually) single-letters.
+A scope analyzer, which is a tool that augments the AST with information about where variables are defined/referenced etc.
+A tree walker — a simple API allowing you to do something on every node in the AST.
+A tree transformer — another API intended to transform the tree.
+
+Sample Usage:
+
+var code='\
+function randomSite() {\n\
+ var tempValue, website = new Array();\n\
+ website[0] = "http://www.WHAK.com";\n\
+ website[1] = "http://www.ScriptCompress.com";\n\
+ website[2] = "http://www.Trollize.com";\n\
+ website[3] = "http://www.Holy-Bibles.com";\n\
+ website[4] = "http://www.Make-A-Meme.com";\n\
+ tempValue = Math.floor(Math.random() * website.length);\n\
+ return website[tempValue];\n}\n\
+alert(randomSite());';
+
+document.write("<pre>"+fuglify(code)+"</pre>");
