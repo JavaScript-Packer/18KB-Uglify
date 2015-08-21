@@ -12,7 +12,7 @@ A tree walker — a simple API allowing you to do something on every node in the
 A tree transformer — another API intended to transform the tree.
 
 Sample Usage:
-
+```javascript
 var code='\
 function randomSite() {\n\
  var tempValue, website = new Array();\n\
